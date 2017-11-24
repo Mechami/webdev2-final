@@ -10,11 +10,11 @@
     <title>Registration Form</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
-        
+        <script src="validation.js"></script>
 </head>
 
 <!-- code customized from boostrap examples. -->
-<form id="registrationForm" class="mx-auto  mt-5" style="width: 600px;" action="index.html" method="post">
+<form id="regiForm" class="mx-auto  mt-5" style="width: 600px;" action="index.html" method="post">
    
         <div class="form-row">
                 <div class="form-group col-md-6">
@@ -97,10 +97,38 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
-<script src="tmaybeJquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-<script>$('#registrationForm').validate();</script>
-<script src="./validationRegistrationForm.js"></script>
+<script>$("#regiForm").validate( rules: {
+        registerName: {
+            required: true,
+            minlength: 2
+        },
+        registerLastName: {
+            required: true,
+            minlength: 2
+        },
+        password: {
+            required: true,
+            minlength: 5
+        },
+        verifyPassword: {
+            required: true,
+            minlength: 5,
+            equalTo: "#registerPassword"
+        },
+        // email: {
+        //     required: true,
+        //     email: true
+        // },
+
+
+    },
+    messages: {
+        registerLastName: "please enter your username",
+        registerFirstName: "please enter your lastName"
+    }
+
+);</script>
 </body>
 
 </html>

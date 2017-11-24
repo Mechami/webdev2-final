@@ -1,6 +1,6 @@
-$().ready(function () {
+$().ready(function() {
 
-    $("registrationForm").validate({
+    $("#regiForm").validate({
         rules: {
             registerName: {
                 required: true,
@@ -17,50 +17,16 @@ $().ready(function () {
             verifyPassword: {
                 required: true,
                 minlength: 5,
-                equalTo: "#registeredPassword"
+                equalTo: "#registerPassword"
             },
-            email: {
-                required: true,
-                email: true
-            },
+            // email: {
+            //     required: true,
+            //     email: true
+            // },
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 
