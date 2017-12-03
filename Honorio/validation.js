@@ -11,11 +11,11 @@ $("#regiForm").validate({
         },
         registerPassword: {
             required: true,
-            minlength: 5
+            minlength: 6
         },
         verifyPassword: {
             required: true,
-            minlength: 5,
+            minlength: 6,
             equalTo: "#registerPassword"
         },
         email: {
