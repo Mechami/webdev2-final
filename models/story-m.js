@@ -42,25 +42,25 @@ exports.getStoryInfo = (id) => {
          if (doc == null) {
            return false;
          }
-         return new Story(doc.author, doc.title, doc.content, doc.creation_date, doc.finished, doc.tag, doc.id);
+         return new Story(doc.author, doc.title, doc.content, doc.creation_date, doc.id);
      });
   });
 };
 
-exports.create = (author, title, content, creation_date, tag, finished) => {
+exports.create = (author, title, content, creation_date) => {
   return exports.connectDB()
   .then((db) => {
-      var story = new Story(author, title, content, creation_date, tag, finished);
+      var story = new Story(author, title, content, creation_date);
       var collection = db.collection('stories');
       return collection.insertOne(story)
         .then((result) => {return result;});
   });
 };
 
-exports.update = (_id, author, title, content, creation_date, tag, finished) => {
+exports.update = (_id, author, title, content, creation_date) => {
   return exports.connectDB()
   .then((db) => {
-      var story = new Story(author, title, content, creation_date, tag, finished);
+      var story = new Story(author, title, content, creation_date);
       var collection = db.collection('stories');
       return collection.updateOne({_id: new ObjectId(_id)}, story)
         .then((result) => {return result;});
