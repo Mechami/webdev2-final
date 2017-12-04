@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The homepage</title>
+    <title>Profiles</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-        crossorigin="anonymous">
+    crossorigin="anonymous">
 </head>
-
 <body>
-    <section id="buttons" class="">
-        <h1 class="d-inline-flex p-2 border border-danger m-4">sentence stories</h1>
-        <a href="singIn.html"><button type="button" class="btn btn-success">Sing In</button></a>
-            <a href="create.html"><button type="button" class="btn btn-primary">Create</button></a>
-                <a href="profiles.html"><button type="button" class="btn btn-info">Profiles</button></a>
-    </section> 
+    <section id="homePageHeader" class="d-flex m-3 h-25">
+    <a href="homePage.html"><h1 class="order-1 border border-danger d-inline-block p-2 mr-3" data-toggle="tooltip" data-placement="bottom" title="Home Page">sentence stories</h1></a>
+    <button type="button" class="btn btn-success d-inline-block mr-3 p-1">your creations</button>
+    <button type="button" class="btn btn-warning d-inline-block mr-3">other Authors</button>
+   
+
+    <form action="" class="navbar-form navbar-right w-25 mt-3 mr-3">
+        <div class="input-group">
+            <input type="Search" placeholder="Search Authors..." class="form-control" />
+            <div class="input-group-btn">
+                <button class="btn btn-info">
+                <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+        </div>
+     </form>
+    </section>
+
     <section id="pages" class="">
         <div id="Author" class="m-4">
             <p id="Username" class="">Username goes here</p>
@@ -37,5 +47,4 @@
         <button type="button" class="btn btn-primary">Next</button>
     </section>
 </body>
-
 </html>
