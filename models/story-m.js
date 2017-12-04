@@ -3,7 +3,6 @@ const MongoClient = require('mongodb').MongoClient;
 const Story = require('./story');
 const ObjectId = require('mongodb').ObjectID;
 
-// Setup our db variable
 var db;
 
 exports.connectDB = () => {
@@ -12,7 +11,6 @@ exports.connectDB = () => {
     var un = 'finalprojuser';
     var pw = 'finalprojpass';
     var url = `mongodb://${un}:${pw}@ds125016.mlab.com:25016/finalprojcsci32`;
-    // Connect to the DB
     MongoClient.connect(url, (err, _db) => {
       if (err) return reject(err);
       db = _db;
@@ -44,25 +42,25 @@ exports.getStoryInfo = (id) => {
          if (doc == null) {
            return false;
          }
-         return new Story(doc.author, doc.title, doc.date_created, doc.finished, doc.id);
+         return new Story(doc.author, doc.title, doc.content, doc.creation_date, doc.finished, doc.tag, doc.id);
      });
   });
 };
 
-exports.create = (author, title, date_created, finished) => {
+exports.create = (author, title, content, creation_date, tag, finished) => {
   return exports.connectDB()
   .then((db) => {
-      var story = new Story(author, title, date_created, finished);
+      var story = new Story(author, title, content, creation_date, tag, finished);
       var collection = db.collection('stories');
       return collection.insertOne(story)
         .then((result) => {return result;});
   });
 };
 
-exports.update = (_id, author, title, date_created, finished) => {
+exports.update = (_id, author, title, content, creation_date, tag, finished) => {
   return exports.connectDB()
   .then((db) => {
-      var story = new Story(author, title, date_created, finished);
+      var story = new Story(author, title, content, creation_date, tag, finished);
       var collection = db.collection('stories');
       return collection.updateOne({_id: new ObjectId(_id)}, story)
         .then((result) => {return result;});
