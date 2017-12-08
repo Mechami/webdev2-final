@@ -11,14 +11,14 @@ $("#regiForm").validate({
         },
         registerPassword: {
             required: true,
-            minlength: 6
+            minlength: 7
         },
         verifyPassword: {
             required: true,
-            minlength: 6,
+            minlength: 7,
             equalTo: "#registerPassword"
         },
-        email: {
+        registerEmail: {
             required: true,
             email: true,
             minlength: 7
@@ -32,7 +32,7 @@ $("#regiForm").validate({
             minlength: 2
         },
         registerAddress2: {
-            required: false,
+            required: false
         },
         registerCity: {
             required: true,
@@ -50,16 +50,118 @@ $("#regiForm").validate({
         registerCheck: {
             required: false
         }
+    },
+
+    messages: {
+        registerFirstName: {
+            required: "Please enter yur first name",
+            minlength: "Please enter atleast 2 characters"
+        },
+        registerLastName: {
+            required: " Please enter your last name",
+            minlength: "Please enter atleast 2 characters"
+        },
+        registerPassword: {
+            required: "Please enter your password",
+            minlength: "Please enter atleast 7 characters"
+        },
+        verifyPassword: {
+            require: "Please re-enter your password",
+            minlength: "Please enter atleast 7 characters",
+            equalTo: "Your password do not match"
+        },
+        registerEmail: {
+            required: "Please enter your password",
+            email: "Please enter your e-mail",
+            minlength: "Please enter atleast 7 chatacters"
+        },
+        registerUsername: {
+            required: "Please enter your username",
+            minlength: "Please enter atleast 3 characters"
+        },
+        registerAddress: {
+            required: true,
+            minlength: "Please ente atleast 2 characters"
+        },
+        registerAddress2: {
+            required: "second address is not required"
+        },
+        registerCity: {
+            required: "Please enter your city",
+            minlength: "Please enter atleast 2 chartacters"
+        },
+        registerState: {
+            required: "Please enter atleast 2 characters"
+        },
+        registerZip: {
+            required: "Please enter your Zip code",
+            minlength: "Please enter atleast 5 characters",
+            maxlength: "Please enter atleast 5 chatacters",
+            digits: "Please enter only characters"
+        },
+        registerCheck: {
+            required: "This checkbox is optional"
+        }
     }
 });
 
 // sing in form
-$("singInForm").validate({
+$("#singInForm").validate({
     rules: {
-        // i still do not unerstand the validation for the singInForm, 
-        // I will be saving time, by waithing and ask to luck.
+        singInEmail: {
+            required: true,
+            email: true,
+            minlength: 7
+        },
+        singInPassword: {
+            required: true,
+            minlength: 7
+        }
+    },
 
-        //I think that this is all i will do for the thurkey is giving break.
+    messages: {
+        singInEmail: {
+            required: "Please enter your e-mail",
+            email: "Please enter a valid e-mail",
+            minlength: "Please enter a minumum of 7 digits"
+        },
+        singInPassword: {
+            required: "Please enter a password",
+            minlength: "Please enter atleast 7 chatacters"
+        }
+    }
+});
 
+//Create form
+$('#createForm').validate({
+    rules: {
+        User: {
+            required: true,
+            minlength: 3
+        },
+        Title: {
+            require: true,
+            minlength: 4,
+        },
+        storySumary: {
+            require: true,
+            minlength: 90,
+            maxlength: 200
+        }
+    },
+    messages: {
+        User: {
+            required: true,
+            minlength: 3
+        },
+        Title: {
+            require: true,
+            minlength: 4,
+        },
+        storySumary: {
+            require: true,
+            minlength: 90,
+            maxlength: 200
+        }
     }
 });

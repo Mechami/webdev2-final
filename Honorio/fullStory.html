@@ -32,8 +32,36 @@
     <a href="homePage.html">
     <button type="button" class="btn btn-success">Go Back Home</button>
     <a href="addToStory.html">
-    <button type="button" class="btn btn-warning">Add To This Story</button>
+    <button type="button" class="btn btn-warning">Contribute to this story!</button>
 </a>
+
+<!-- this part rigth here is going to hide,
+ it will show when the button contribute to story is pressed. -->
+
+<div>
+    <h1 class="m-5">Add to Story</h1>
+</div>
+<form id="contributeForm" class="m-5" action="homePage.html" method="Post" enctype="">
+    <div cLass="form-group">
+        <label for="User">User</label>
+        <input type="text" class="form-control" id="User" placeholder="optional">
+    </div>
+ 
+    <div cLass="form-group">
+        <label for="">Contribute</label>
+        <textarea class="form-control" id="completeStory" rows="10" placeholder="required, atleast 20 characters"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+<script src="validation.js"></script>
+
 </body>
 
 </html>
