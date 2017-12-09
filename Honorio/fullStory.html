@@ -29,11 +29,12 @@
 
         <p id="StoryBody">Hello!</p>
     </div>
-    <a href="homePage.html">
-    <button type="button" class="btn btn-success">Go Back Home</button>
-    <a href="addToStory.html">
-    <button type="button" class="btn btn-warning">Contribute to this story!</button>
-</a>
+    <form method="get" class="btn btn-warning" action="homePage.html">
+        <button type="submit">Go Back Home</button>
+    </form>
+    <form method="get" class="btn btn-success" action="addToStory.html">
+        <button type="submit">Contribute To This Story</button>
+    </form>
 
 <!-- this part rigth here is going to hide,
  it will show when the button contribute to story is pressed. -->
@@ -41,14 +42,14 @@
 <div>
     <h1 class="m-5">Add to Story</h1>
 </div>
-<form id="contributeForm" class="m-5" action="homePage.html" method="Post" enctype="">
+<form id="contributeForm" class="m-5" action="homePage.html" method="Post">
     <div cLass="form-group">
         <label for="User">User</label>
         <input type="text" class="form-control" id="User" placeholder="optional">
     </div>
  
     <div cLass="form-group">
-        <label for="">Contribute</label>
+        <label for="completeStory">Contribute</label>
         <textarea class="form-control" id="completeStory" rows="10" placeholder="required, atleast 20 characters"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

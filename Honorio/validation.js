@@ -97,7 +97,7 @@ $("#regiForm").validate({
             required: "Please enter your Zip code",
             minlength: "Please enter atleast 5 characters",
             maxlength: "Please enter atleast 5 chatacters",
-            digits: "Please enter only characters"
+            digits: "Please enter only Numbers"
         },
         registerCheck: {
             required: "This checkbox is optional"
@@ -133,7 +133,7 @@ $("#singInForm").validate({
 });
 
 //Create form
-$('#createForm').validate({
+$("#createForm").validate({
     rules: {
         User: {
             required: true,
@@ -141,27 +141,32 @@ $('#createForm').validate({
         },
         Title: {
             require: true,
-            minlength: 4,
+            minlength: 4
         },
         storySumary: {
             require: true,
             minlength: 90,
             maxlength: 200
+        },
+        completeStory: {
+            required: true,
+            minlength: 200
         }
     },
+
     messages: {
         User: {
-            required: true,
-            minlength: 3
+            required: "Please enter your Usernane",
+            minlength: "Please enter atleast 3 characters"
         },
         Title: {
-            require: true,
-            minlength: 4,
+            require: "Please enter your Title",
+            minlength: "Please atleast 4 characters"
         },
         storySumary: {
-            require: true,
-            minlength: 90,
-            maxlength: 200
+            require: "story sumary is required",
+            minlength: "Please enter atlease 90 characters",
+            maxlength: "Please enter a Maximum of 200 characters"
         }
     }
 });
