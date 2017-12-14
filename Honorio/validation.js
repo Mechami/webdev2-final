@@ -169,4 +169,28 @@ $("#createForm").validate({
             maxlength: "Please enter a Maximum of 200 characters"
         }
     }
+
+});
+//Contribute Form
+$("#contributeForm").validate({
+    rules: {
+        User: {
+            required: false,
+            minlength: 4,
+            maxlength: 5
+        },
+        completeStory: {
+            required: true,
+            minlength: 50,
+            maxlength: 200
+        }
+    },
+
+    messages: {
+        completeStory: {
+            requied: "enter your text",
+            minlength: "enter atleast 4 characters",
+            maxlength: "Enter arMax 200 characters"
+        }
+    }
 });
